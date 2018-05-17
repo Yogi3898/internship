@@ -6,29 +6,78 @@ int result;
 int TOP;
 int STACK[MAX];
 
-// Function: Addition
-// Adds two integers and returns the result.
+/* Function: addition
+
+   Adds two integers.
+
+   Parameters:
+
+      a - The first integer.
+      b - The second integer.
+
+   Returns:
+
+      The sum of two integers.
+
+*/
 int addition(int a,int b){
     result=a+b;
     return result;
 }
 
-// Function: Subtraction
-// Subtracts two integers and returns the result.
+/* Function: subtraction
+
+   subtracts two integers.
+
+   Parameters:
+
+      a - The first integer.
+      b - The second integer.
+
+   Returns:
+
+      The diffrence of two integers.
+
+*/
 int subtraction(int a,int b){
     result=a-b;
     return result;
 }
 
-// Function: Multiply
-// Multiplies two integers and returns the result.
+/* Function: multiplication
+
+   Multiplies two integers.
+
+   Parameters:
+
+      a - The first integer.
+      b - The second integer.
+
+   Returns:
+
+      The two integers multiplied together.
+
+*/
+
 int multiplication(int a,int b){
     result=a*b;
     return result;
 }
 
-// Function: Division
-// Divides two integers and returns the result.
+/* Function: division
+
+   Divides two integers.
+
+   Parameters:
+
+      a - The first integer.
+      b - The second integer.
+
+   Returns:
+
+      The ratio of two integers.
+
+*/
 int division(int a,int b){
     result=a/b;
     return result;
@@ -85,8 +134,21 @@ void display(){
 }
 
 
-// Function: calculation
-// Calculation part takes place here
+/* Function: calculation
+
+   Handels the calculation part.
+
+   Parameters:
+
+      firstNumber - The first integer.
+      operat - The Operator
+      secondNumber - The second integer.
+
+   Returns:
+
+      The final result of the calculation.
+
+*/
 void calculation(int firstNumber, char operat, int secondNumber)
 {
     int output;
