@@ -2,42 +2,27 @@
 #include<gtest/gtest.h>
 #include "calculator.hpp"
 
-TEST(Subtraction,subtracting_Positive_numbers)
+TEST(subtraction,subtracting_Positive_numbers)
 {
-    //Arrange
-    int a = 5,b = 6;
-    int output;
-    //act
-    output = subtraction(a,b);
-    //assert
-    ASSERT_EQ(output,-1);
-    
+    EXPECT_EQ(subtraction(5,6),-1); 
 }
 
 TEST(subtraction,subtracting_Negative_numbers)
 {
-    //Arrange
-    int a = 5,b = -6;
-    int output;
-    //act
-    output = subtraction(a,b);
-    //assert
-    ASSERT_EQ(output,a-b);
-    
+    EXPECT_EQ(subtraction(5,-6),11); 
 }
 
-TEST(Subtraction,subtracting_zero_from_a_Number)
+TEST(subtraction,subtracting_zero_to_a_Number)
 {
-    //Arrange
-    int a = 5,b = 0;
-    int output;
-    //act
-    output = subtraction(a,b);
-    //assert
-    ASSERT_EQ(output,a);
-    
+    EXPECT_EQ(subtraction(5,0),5);   
 }
 
+
+
+TEST(subtraction,computing_with_Extra_Large_Number)
+{
+    EXPECT_EQ(subtraction(2500000000,-2700000000),5200000000);   
+}
 
 int main(int argc,char** argv)
 {
