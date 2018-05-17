@@ -4,39 +4,27 @@
 
 TEST(Addition,adding_Positive_numbers)
 {
-    //Arrange
-    int a = 5,b = 6;
-    int output;
-    //act
-    output = addition(a,b);
-    //assert
-    ASSERT_EQ(output,11);
-    
+    EXPECT_EQ(addition(5,6),11); 
 }
 
 TEST(Addition,adding_Negative_numbers)
 {
-    //Arrange
-    int a = 5,b = -6;
-    int output;
-    //act
-    output = addition(a,b);
-    //assert
-    ASSERT_EQ(output,-1);
-    
+    EXPECT_EQ(addition(5,-6),-1); 
 }
 
 TEST(Addition,adding_zero_to_a_Number)
 {
-    //Arrange
-    int a = 5,b = 0;
-    int output;
-    //act
-    output = addition(a,b);
-    //assert
-    ASSERT_EQ(output,a);
-    
+    EXPECT_EQ(addition(5,0),5);   
 }
+
+
+
+TEST(Addition,computing_with_Extra_Large_Number)
+{
+    EXPECT_EQ(addition(2500000000,2700000000),5200000000);   
+}
+
+
 
 
 int main(int argc,char** argv)
