@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdio.h>
 #include "calculator.hpp"
 #include "additionTest.hpp"
 #include "subtractionTest.hpp"
@@ -18,6 +19,11 @@
 
 int main(int argc,char** argv)
 {
+    freopen ("output.txt","w",stdout);
     testing:: InitGoogleTest(&argc,argv);
-    return RUN_ALL_TESTS();
+    
+    
+    int result =  RUN_ALL_TESTS();
+    fclose(stdout);
+    return result;
 }
