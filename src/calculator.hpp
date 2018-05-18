@@ -2,86 +2,69 @@
 #define MAX 1000
 using namespace std;
 
-int result;
+int functionResult;
 int TOP;
 int STACK[MAX];
 
-/* Function: addition
+class functions{
+    public:
+/*Function: addition
+    Add two integers
+  Parameters : 
+    a - The first integer
+    b - The second integer
+  Return :
+    Gives the addition of two numbers
+*/ 
 
-   Adds two integers.
-
-   Parameters:
-
-      a - The first integer.
-      b - The second integer.
-
-   Returns:
-
-      The sum of two integers.
-
-*/
 int addition(int a,int b){
-    result=a+b;
-    return result;
+//    functionResult=a+b;
+    return a+b;
 }
 
-/* Function: subtraction
-
-   subtracts two integers.
-
-   Parameters:
-
-      a - The first integer.
-      b - The second integer.
-
-   Returns:
-
-      The diffrence of two integers.
-
+/*Function: subtraction
+    Subtracts two integers
+  Parameters : 
+    a - The first integer
+    b - The second integer
+  Return :
+    Gives the substraction of two numbers
 */
+
 int subtraction(int a,int b){
-    result=a-b;
-    return result;
+    functionResult=a-b;
+    return functionResult;
 }
 
-/* Function: multiplication
-
-   Multiplies two integers.
-
-   Parameters:
-
-      a - The first integer.
-      b - The second integer.
-
-   Returns:
-
-      The two integers multiplied together.
-
+/*Function: multiplication
+    Multiplies two integers
+  Parameters : 
+    a - The first integer
+    b - The second integer
+  Return :
+    Gives the product of two numbers
 */
 
 int multiplication(int a,int b){
-    result=a*b;
-    return result;
+    functionResult=a*b;
+    return functionResult;
 }
 
-/* Function: division
-
-   Divides two integers.
-
-   Parameters:
-
-      a - The first integer.
-      b - The second integer.
-
-   Returns:
-
-      The ratio of two integers.
-
+/*Function: division
+    Divide two integers
+  Parameters : 
+    a - The first integer
+    b - The second integer
+  Return :
+    Gives the division of two numbers
 */
+
 int division(int a,int b){
-    result=a/b;
-    return result;
+    functionResult=a/b;
+    return functionResult;
 }
+
+};
  
 // Function: initStack
 // Initialises a stack. 
@@ -135,38 +118,53 @@ void display(){
 
 
 /* Function: calculation
-
    Handels the calculation part.
-
    Parameters:
-
       firstNumber - The first integer.
       operat - The Operator
       secondNumber - The second integer.
-
    Returns:
-
       The final result of the calculation.
-
 */
-void calculation(int firstNumber, char operat, int secondNumber)
+
+functions func;
+int choose(int firstNumber, char operat, int secondNumber)
 {
     int output;
     if(operat =='+'){
-        output=addition(firstNumber,secondNumber);
+        output=func.addition(firstNumber,secondNumber);
     }
     else if(operat == '-'){
-        output=subtraction(firstNumber,secondNumber);
+        output=func.subtraction(firstNumber,secondNumber);
     }
     else if(operat == '*'){
-        output=multiplication(firstNumber,secondNumber);
+        output=func.multiplication(firstNumber,secondNumber);
     }
    else if(operat == '/'){
-        output=division(firstNumber,secondNumber);
+        output=func.division(firstNumber,secondNumber);
     }
     else if(operat == 'c'){
         exit(0);
     }
+    
+
+return output;
+
+    
+}
+
+// Function: input
+// It takes Input from the user
+void input()
+{
+    initStack();
+    int firstNumber, secondNumber;
+    char operat;
+    int output;
+    cout << "Instructions:\n\nPress + to add\nPress - to subtract\nPress * to multiply\nPress / to divide\nPress c to clear\nPress m to save\n " ;
+    cin >> firstNumber >> operat >>secondNumber;
+    
+    output = choose(firstNumber,operat,secondNumber);
     
     cout << output;
     
@@ -180,40 +178,27 @@ void calculation(int firstNumber, char operat, int secondNumber)
         }
         else if(operat == '+'){
             cin >> number;
-            output=addition(output,number);
+            output=func.addition(output,number);
         }
         
         else if(operat == '-'){
             cin >> number;
-            output=subtraction(output,number);
+            output=func.subtraction(output,number);
         }
         else if(operat == '*'){
             cin >> number;
-            output=multiplication(output,number);
+            output=func.multiplication(output,number);
         }
         else if(operat == '/'){
             cin >> number;
-            output=division(output,number);
+            output=func.division(output,number);
         }
         else if(operat == 'm'){
             push(output);
         }
+        
        cout<<output;
-    }
-    
-}
+   }
 
-// Function: input
-// It takes Input from the user
-void input()
-{
-    initStack();
-    int firstNumber, secondNumber;
-    char operat;
-    cout << "Instructions:\n\nPress + to add\nPress - to subtract\nPress * to multiply\nPress / to divide\nPress c to clear\nPress m to save\n " ;
-    cin >> firstNumber >> operat >>secondNumber;
-    
-    calculation(firstNumber,operat,secondNumber);
 
 }
-
