@@ -1,4 +1,3 @@
-
 #include<gtest/gtest.h>
 
 
@@ -16,17 +15,12 @@ TEST(division,dividing_Negative_numbers)
 
 TEST(division,When_Denominator_is_Zero)
 {
-    EXPECT_EQ(func.division(5,0),-1);   
+    int result=func.division(8,0);
+    EXPECT_ANY_THROW("Not defined");
 }
-
-TEST(division,When_Neumerator_is_Zero)
-{
-    EXPECT_EQ(func.division(0,5),0);   
-}
-
 
 
 TEST(division,computing_with_Extra_Large_Number)
 {
-    EXPECT_EQ(func.division(100000000,0.001),100000000000);   
+    EXPECT_EQ(func.division(100000000000,1),100000000000);   
 }
